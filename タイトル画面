@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>授業用サイト │ Project N</title>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.47 24.94" id="arrow" class="arrow_svg">
+      <title>arrow</title>
+      <polygon points="0 24.94 0 19.66 7.35 12.47 0 5.92 0 0 12.47 12.47 0 24.94"/>
+    </symbol>
+  </svg>
+  <header class="header01">
+    <div class="container">
+      <!-- タイトルエリア ここから-->
+      <div class="header__logo01"><img src="assets/images/top-image.png" alt="みんなで特別授業"></div>
+      <!-- タイトルエリア ここまで-->
+    </div>
+  </header>
+  <main class="main index-page">
+    <div id="stage">
+      <div id="sectionStage1" class="stage">
+      <div class="container">
+        <div class="greeting">
+          <p class="normal">こんにちは！<br>
+          僕たちはN高等学校の生徒です。<br>
+          今日は、みんなにこのサイトを使った<br>
+          <p class="bold">謎解きゲーム<br></p>
+          <p class="normal">にチャレンジしてもらうよ！</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="student">
+          <h1 class="student-title">先生の紹介</h1>
+          <div class="character-list"><img src="assets/images/character-list.PNG" alt="生徒画像"></div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="quiz-first">
+          <h1>まずはこの問題を解いてみよう！</h1>
+          <div class="quiz-image"><img src="assets/images/quiz-image01.png" alt="クイズ画像"></div>
+        </div>
+      </div>
+      <!-- STAGE1回答入力セクション ここから-->
+      <div class="container">
+        <answer-input class=" inputAnswer" v-bind:correct="correctAnswer['stage1']['q1']" v-on:answer-input="answerInput($event, 'stage1', 1)"></answer-input>   
+      </div>
+      <!-- STAGE1回答入力セクション ここまで-->
+
+      <!-- STAGE1クリア画面 ここから-->
+      <section v-if="clear['stage1']" v-bind:class="{isClear:clear['stage1']}"  class="section section--clear bg-color--gray">
+        <div class="container">
+          <div class="clear-message">
+            <div class="clear-message__title">正解！</div>
+            <div class="clear-message__content">次の問題も解いてみよう！</div>
+            <a class="clear-message__btn btn" href="call.html">次のページへ<svg class="btn__arrow"></svg></a>
+         </div>
+        </div>
+      </section>
+      <!-- STAGE1クリア画面 ここまで-->
+      </div>
+    </div>
+  </main>
+  </div>
+  <footer class="footer section bg-color--gray">
+    <div class="container">
+      <p class="text-center">授業主催： N・S高<br>協力：株式会社SCRAP<br>企画制作：N・S高生</p>
+      <p class="text-center">「リアル脱出ゲーム」は株式会社SCRAPの登録商標です。</p>
+      <p class="text-center">株式会社SCRAPとN・S高で実施した授業「リアル脱出ゲームの作り方」の一環で<br>生徒が制作したものであり、SCRAPが主催/公認するものではありません。</p>
+  </footer>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
